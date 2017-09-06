@@ -13,6 +13,8 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    // this is the draw loop
+    
     ofBackground(0);
     
     float time = ofGetElapsedTimef();

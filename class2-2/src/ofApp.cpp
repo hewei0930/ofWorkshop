@@ -25,7 +25,7 @@ void ofApp::draw(){
                        117 + 1*sin(i*0.2),
                        117 + 100*sin(i*2));
             
-        //ofDrawRectangle(200+i*50, 200+j*100, 50*sin(i*0.01 + time), 80*sin(i*0.1 + time));
+        //ofDrawRectangle(200+i*50, 200+j*100, 50*sin(i*0.01 + time), 80*sin(i*0.1 + time));a
         
         ofDrawRectangle(i*25+mouseX, 200+j*100, 50*sin(i*10 + time), 80*sin(i*0.1 + time));
         
