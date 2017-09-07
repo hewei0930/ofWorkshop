@@ -11,17 +11,20 @@ public:
     float velocityY;
     float speed;
     float radius;
+    float time;
     ofColor colors;
     
     
     void setup(float xIn, float yIn){
-        speed = ofRandom(2, 5);
+        speed = ofRandom(2, 10);
         x = xIn;
         y = yIn;
         velocityX = speed;
         velocityY = speed;
         radius = ofRandom(2, 40);
         colors = ofColor(ofRandom(0, 255),ofRandom(0,255),ofRandom(0,255));
+        
+        time = ofGetElapsedTimef();
     }
     void update(){
         x =  x + velocityX;
@@ -43,6 +46,7 @@ public:
     }
     void draw(){
         ofSetColor(colors);
+        radius = ofMap(sin(x+time)/5, 0, 1, 4, 200);
         ofDrawCircle(x, y, radius);
     }
 
