@@ -13,10 +13,10 @@ public:
     float radius;
     
     
-    void setup(){
+    void setup(float xIn, float yIn){
         speed = 10;
-        x = ofGetWidth()/2;
-        y = ofGetHeight()/2;
+        x = xIn;
+        y = yIn;
         velocityX = speed;
         velocityY = speed;
         radius = 50;
@@ -69,6 +69,8 @@ class ofApp : public ofBaseApp{
     
     
     Particle myparticle;
-       
+    Particle myparticle2;
+
+    
 		
 };

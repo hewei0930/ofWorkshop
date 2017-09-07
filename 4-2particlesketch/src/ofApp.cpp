@@ -2,14 +2,16 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    myparticle.setup();
+    myparticle.setup(100,200);
+    myparticle2.setup(200,400);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     myparticle.update();
-    
+    myparticle2.update();
+
 
 }
 
@@ -19,7 +21,8 @@ void ofApp::draw(){
     ofBackground(0);
     
     myparticle.draw();
-    
+    myparticle2.draw();
+
 
 }
 
