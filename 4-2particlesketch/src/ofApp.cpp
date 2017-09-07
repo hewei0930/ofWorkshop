@@ -2,6 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    x = ofGetWidth()/2;
+    y = ofGetHeight()/2;
 
 }
 
@@ -12,6 +14,14 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    
+    ofBackground(0);
+    
+    
+    
+    
+    //ofDrawCircle(ofGetWidth()/2, ofGetHeight()/2, 10);
+    ofDrawCircle(x, y, 10);
 
 }
 
