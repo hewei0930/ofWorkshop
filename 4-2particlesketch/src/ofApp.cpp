@@ -2,15 +2,21 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    myparticle.setup(100,200);
-    myparticle2.setup(200,400);
+    
+    for (int i=0; i<100; i++) {
+        myparticles[i].setup(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()));
+    }
+
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    myparticle.update();
-    myparticle2.update();
+    
+    for (int i=0; i<100; i++){
+        myparticles[i].update();
+    
+    }
 
 
 }
@@ -20,8 +26,10 @@ void ofApp::draw(){
     
     ofBackground(0);
     
-    myparticle.draw();
-    myparticle2.draw();
+    for (int i=0; i<100; i++){
+    myparticles[i].draw();
+        
+    }
 
 
 }

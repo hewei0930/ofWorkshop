@@ -19,7 +19,7 @@ public:
         y = yIn;
         velocityX = speed;
         velocityY = speed;
-        radius = 50;
+        radius = 20;
     }
     void update(){
         x =  x + velocityX;
@@ -68,8 +68,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     
-    Particle myparticle;
-    Particle myparticle2;
+    Particle myparticles[100];
 
     
 		
