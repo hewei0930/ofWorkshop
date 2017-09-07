@@ -4,11 +4,18 @@
 void ofApp::setup(){
     x = ofGetWidth()/2;
     y = ofGetHeight()/2;
+    velocityX = 1;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    x =  x + velocityX;
+    
+    if (x > ofGetWidth()) {
+        velocityX = -1;
+    }
 
 }
 
@@ -18,8 +25,6 @@ void ofApp::draw(){
     ofBackground(0);
     
     
-    
-    
     //ofDrawCircle(ofGetWidth()/2, ofGetHeight()/2, 10);
     ofDrawCircle(x, y, 10);
 
@@ -27,6 +32,8 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    
+    
 
 }
 
