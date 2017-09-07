@@ -13,26 +13,32 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofBackground(255);
+    ofBackground(0);
     
-    //float time = ofGetElapsedTimef();
-    
-    if mouseX > ofGetWidth() || mouseX < 0 ||
+    float time = ofGetElapsedTimef();
+    float radius = ofGetElapsedTimef();
     
     for(int i =0; i< ofGetWidth(); i++){
         for(int j=0; j<ofGetHeight(); j++){
+    
+    
+    if (mouseX > ofGetWidth() || mouseX < 0 || mouseY > ofGetHeight() || mouseY < 0){
+        
+        ofSetColor(0, ofRandom(0,255), 0);
+        radius = ofRandom(10, 100);
+
+    }
             
-            int green = ofMap(sin(time), -1,1, 0, 255);
-            ofSetColor(117 + 117*sin(i*0.02),
-                       green,
-                       117 + 100*sin(i*2));
+    else{
+        ofSetColor(255,
+                   255,
+                   117 + 100*sin(i*2));
+        radius = 10;
+        
+    }
+
             
-            
-            ofDrawCircle(<#float x#>, <#float y#>, <#float radius#>)
-            
-            
-            
-            
+            ofDrawCircle(i*ofGetWidth()/10, j*ofGetHeight()/10, radius);
             
             //ofDrawRectangle(i*25+mouseX, 200+j*100, 50*sin(i*10 + time + j*40), 80*cos(i*0.1 + j*0.4 + time));
             
