@@ -10,6 +10,7 @@ public:
     float velocityX;
     float velocityY;
     float speed;
+    float radius;
     
     
     void setup(){
@@ -18,6 +19,7 @@ public:
         y = ofGetHeight()/2;
         velocityX = speed;
         velocityY = speed;
+        radius = 50;
     }
     void update(){
         x =  x + velocityX;
@@ -38,7 +40,7 @@ public:
         }
     }
     void draw(){
-        ofDrawCircle(x, y, 10);
+        ofDrawCircle(x, y, radius);
     }
 
 
