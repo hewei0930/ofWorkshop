@@ -11,6 +11,7 @@ public:
     float velocityY;
     float speed;
     float radius;
+    ofColor colors;
     
     
     void setup(float xIn, float yIn){
@@ -20,6 +21,7 @@ public:
         velocityX = speed;
         velocityY = speed;
         radius = ofRandom(2, 40);
+        colors = ofColor(ofRandom(0, 255),ofRandom(0,255),ofRandom(0,255));
     }
     void update(){
         x =  x + velocityX;
@@ -40,6 +42,7 @@ public:
         }
     }
     void draw(){
+        ofSetColor(colors);
         ofDrawCircle(x, y, radius);
     }
 
