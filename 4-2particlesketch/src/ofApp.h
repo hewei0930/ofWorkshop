@@ -14,12 +14,12 @@ public:
     
     
     void setup(float xIn, float yIn){
-        speed = 10;
+        speed = ofRandom(2, 5);
         x = xIn;
         y = yIn;
         velocityX = speed;
         velocityY = speed;
-        radius = 20;
+        radius = ofRandom(2, 40);
     }
     void update(){
         x =  x + velocityX;
