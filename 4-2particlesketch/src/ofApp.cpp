@@ -2,9 +2,11 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    speed = 10;
     x = ofGetWidth()/2;
     y = ofGetHeight()/2;
-    velocityX = 1;
+    velocityX = speed;
+    velocityY = speed;
 
 }
 
@@ -12,10 +14,22 @@ void ofApp::setup(){
 void ofApp::update(){
     
     x =  x + velocityX;
+    y =  y + velocityY;
     
     if (x > ofGetWidth()) {
-        velocityX = -1;
+        velocityX = -speed;
     }
+    else if (x < 0) {
+        velocityX = speed;
+    }
+    
+    if (y > ofGetHeight()) {
+        velocityY = -speed;
+    }
+    else if (y < 0) {
+        velocityY = speed;
+    }
+    
 
 }
 
