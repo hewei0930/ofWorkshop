@@ -2,33 +2,13 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    speed = 10;
-    x = ofGetWidth()/2;
-    y = ofGetHeight()/2;
-    velocityX = speed;
-    velocityY = speed;
+    myparticle.setup();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    x =  x + velocityX;
-    y =  y + velocityY;
-    
-    if (x > ofGetWidth()) {
-        velocityX = -speed;
-    }
-    else if (x < 0) {
-        velocityX = speed;
-    }
-    
-    if (y > ofGetHeight()) {
-        velocityY = -speed;
-    }
-    else if (y < 0) {
-        velocityY = speed;
-    }
+    myparticle.update();
     
 
 }
@@ -38,9 +18,8 @@ void ofApp::draw(){
     
     ofBackground(0);
     
+    myparticle.draw();
     
-    //ofDrawCircle(ofGetWidth()/2, ofGetHeight()/2, 10);
-    ofDrawCircle(x, y, 10);
 
 }
 
