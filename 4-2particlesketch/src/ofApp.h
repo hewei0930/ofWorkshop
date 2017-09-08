@@ -17,8 +17,8 @@ public:
     
     
     void setup(float xIn, float yIn){
-        speedX = ofRandom(2, 10);
-        speedY = ofRandom(2, 10);
+        speedX = ofRandom(-10, 10);
+        speedY = ofRandom(-10, 10);
         x = xIn;
         y = yIn;
         velocityX = speedX;
@@ -32,18 +32,15 @@ public:
         x =  x + velocityX;
         y =  y + velocityY;
         
-        if (x > ofGetWidth()) {
-            velocityX = -speedX;
-        }
-        else if (x < 0) {
-            velocityX = speedX;
+        if (x <0 || x > ofGetWidth()) {
+            velocityX = - velocityX;
         }
         
         if (y > ofGetHeight()) {
-            velocityY = -speedY;
+            velocityY = -velocityY;
         }
         else if (y < 0) {
-            velocityY = speedY;
+            velocityY = -velocityY;
         }
     }
     void draw(){

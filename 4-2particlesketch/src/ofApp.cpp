@@ -4,7 +4,8 @@
 void ofApp::setup(){
     
     for (int i=0; i<100; i++) {
-        myparticles[i].setup(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()));
+        //myparticles[i].setup(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()));
+        myparticles[i].setup(ofGetWidth()/2, ofGetHeight()/2);
     }
 
 
