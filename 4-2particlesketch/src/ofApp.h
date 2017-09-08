@@ -9,18 +9,20 @@ public:
     float y;
     float velocityX;
     float velocityY;
-    float speed;
+    float speedX;
+    float speedY;
     float radius;
     float time;
     ofColor colors;
     
     
     void setup(float xIn, float yIn){
-        speed = ofRandom(2, 10);
+        speedX = ofRandom(2, 10);
+        speedY = ofRandom(2, 10);
         x = xIn;
         y = yIn;
-        velocityX = speed;
-        velocityY = speed;
+        velocityX = speedX;
+        velocityY = speedY;
         radius = ofRandom(2, 40);
         colors = ofColor(ofRandom(0, 255),ofRandom(0,255),ofRandom(0,255));
         
@@ -31,22 +33,22 @@ public:
         y =  y + velocityY;
         
         if (x > ofGetWidth()) {
-            velocityX = -speed;
+            velocityX = -speedX;
         }
         else if (x < 0) {
-            velocityX = speed;
+            velocityX = speedX;
         }
         
         if (y > ofGetHeight()) {
-            velocityY = -speed;
+            velocityY = -speedY;
         }
         else if (y < 0) {
-            velocityY = speed;
+            velocityY = speedY;
         }
     }
     void draw(){
         ofSetColor(colors);
-        radius = ofMap(sin(x+time)/5, 0, 1, 4, 200);
+        radius = ofMap(sin(x+time)/10, 0, 1, 4, 200);
         ofDrawCircle(x, y, radius);
     }
 
