@@ -2,49 +2,55 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    
-    for (int i=0; i<100; i++) {
-        //myparticles[i].setup(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()));
-        //myparticles[i].setup(ofGetWidth()/2, ofGetHeight()/2);
-        myparticles[i].setup(mouseX, mouseY);
-    }
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    for (int i=0; i<100; i++){
-        myparticles[i].update();
-    
-    }
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofBackground(0);
     
-    for (int i=0; i<100; i++){
-    myparticles[i].draw();
-        
-    }
-
-
+    ofBackground(255);
+    ofSetColor(0, 0, 255);
+    
+    ofSeedRandom(mouseX);
+    
+    float x = 100;
+    float y = 100;
+    
+    for (int j=0; j<6; j++){
+        x = 100;
+        ofPolyline temp;
+            for (int i = 0; i < 71; i++){
+                //temp.addVertex(  100+ofRandom(0,60), 100+ofRandom(0,60) );
+                x = x + ofRandom(0,6);
+                //y = y + ofRandom(0,60);
+                float time = ofGetElapsedTimef();
+                float start = -30;
+                float xMove = ofRandom(20, 40);
+                float yMove = ofMap(sin(0.05*time*ofRandom(-25,20)), -1
+                                    , 1, -25, 20);
+                //float yMove = ofRandom(-25,20);
+                    if (i % 2 == 0){
+                        start = 30;
+                        xMove = ofRandom(-5,0);
+                        yMove = ofRandom(-5,5);
+                    }
+                y = start + yMove;
+                   cout<< x << endl;
+                   cout<< y << endl;
+                temp.addVertex(x + i*8 + xMove, 120 + y + j*100);
+            }
+            temp.draw();
+        }
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    
-    
-    
-        //for (int i=0; i<100; i++){
-            //myparticles[i].keyPressed(int key);
-        //}
-        
 
 }
 

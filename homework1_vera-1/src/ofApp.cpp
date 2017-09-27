@@ -2,49 +2,38 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    
-    for (int i=0; i<100; i++) {
-        //myparticles[i].setup(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()));
-        //myparticles[i].setup(ofGetWidth()/2, ofGetHeight()/2);
-        myparticles[i].setup(mouseX, mouseY);
-    }
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    for (int i=0; i<100; i++){
-        myparticles[i].update();
-    
-    }
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofBackground(255);
     
-    ofBackground(0);
+    ofSeedRandom(mouseX);
+    //ofSeedRandom(mouseY);
     
-    for (int i=0; i<100; i++){
-    myparticles[i].draw();
-        
+    //mouseX = ofRandom(-25, 25);
+    //mouseY = ofRandom(-25, 25);
+    
+    //mouseX = ofMap(ofRandomf(), 0, 0, -25, 25);
+    //mouseY = ofMap(ofRandomf(), 0, 0, -25, 25);
+    
+    
+    for (int i = 0; i < 5; i++){
+        for (int j=0; j < 5; j++){
+            ofSetColor(0);
+            ofDrawRectangle(50+i*140+ofRandom(-mouseX,mouseX)/30, 50+j*140+ofRandom(-mouseY,mouseY)/30, 130, 130);
+        }
     }
-
-
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    
-    
-    
-        //for (int i=0; i<100; i++){
-            //myparticles[i].keyPressed(int key);
-        //}
-        
 
 }
 

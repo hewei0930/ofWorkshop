@@ -14,6 +14,8 @@ public:
     float radius;
     float time;
     ofColor colors;
+    float mouseX;
+    float mouseY;
     
     
     void setup(float xIn, float yIn){
@@ -48,7 +50,14 @@ public:
         radius = ofMap(sin(x+time)/10, 0, 1, 4, 200);
         ofDrawCircle(x, y, radius);
     }
-
+    
+    //void keyPressed(int key){
+        
+        //if (key == ' '){
+        //x = xIn;
+        //y = yIn;
+        //}
+        
 
 };
 

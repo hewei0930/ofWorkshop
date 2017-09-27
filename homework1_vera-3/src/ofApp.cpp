@@ -2,49 +2,49 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    
-    for (int i=0; i<100; i++) {
-        //myparticles[i].setup(ofRandom(0, ofGetWidth()), ofRandom(0, ofGetHeight()));
-        //myparticles[i].setup(ofGetWidth()/2, ofGetHeight()/2);
-        myparticles[i].setup(mouseX, mouseY);
-    }
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    for (int i=0; i<100; i++){
-        myparticles[i].update();
-    
-    }
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofBackground(0);
+    ofBackground(255);
     
-    for (int i=0; i<100; i++){
-    myparticles[i].draw();
-        
+    ofSetColor(0, 0, 255);
+    // how to fill the color?
+    
+    ofSeedRandom(mouseX);
+    
+    for (int i = 0; i < 28; i++){
+        for (int j=0; j < 6; j++){
+            
+            // ofPolyline(const vector<10> &verts);
+            
+            ofPoint a = ofPoint(i*30+100, j*90+130);
+            ofPoint b = ofPoint(i*30+130, j*90+100);
+            ofPoint c = ofPoint(i*30+130, j*90+130);
+
+            a.x = a.x + ofRandom (-5,5);
+            b.x = b.x + ofRandom (-10,10);
+            b.y = b.y + ofRandom (-35,10);
+            //c.x = c.x + ofRandom (-5,5);
+            //b.y = b.y + ofSignedNoise(i*mouseX*0.01)*50;
+            //b.x = b.x + ofNoise(i*mouseX*0.01)*50;
+
+            ofDrawLine(a, b);
+            //ofDrawLine(b, a+i);
+            ofDrawLine(b, c);
+        }
     }
-
-
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    
-    
-    
-        //for (int i=0; i<100; i++){
-            //myparticles[i].keyPressed(int key);
-        //}
-        
 
 }
 
