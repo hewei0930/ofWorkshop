@@ -17,11 +17,8 @@ public:
     float time;
 
     
-    //void setup(float xIn, float yIn){
     void setup(){
         position = ofPoint(ofRandom(0, 800),ofRandom(0, 600));
-        //x = xIn;
-        //y = yIn;
         startTime = ofGetElapsedTimef();
         duration = 1.5;
         colors = ofColor(ofRandom(0,255),ofRandom(0,255),ofRandom(0,255),220);
@@ -33,11 +30,13 @@ public:
         
         float timeAlive = time - startTime;
         
-        //if (timeAlive < duration){
+        //if (timeAlive < duration){     // I don't know why "if" doesn't work here...
+        
             float pct = ofMap(timeAlive, 0, duration, -1, 1);
             float sinPct = sin(pct * PI);
             float radius = ofMap(sinPct, -1, 1, 0, 100);
             //float radius = ofMap(sinPct, -1, 1, 0, 100+ ofRandom(0, 10));
+        
         //}
         
         float colorful = ofMap(sin(time), -1, 1, 0, 255);

@@ -7,17 +7,12 @@ void ofApp::setup(){
     
     for (int i = 0; i<100; i++){
         
-        //myObjs[i].setup(ofRandom(0, 800), ofRandom(0, 600));
+        
         myObjs[i].setup();
         
         
         
         //radius[i] = ofRandom(10, 100);
-        
-        
-        
-        //x[i] = ofRandom(0,800);
-        //y[i] = ofRandom(0,600);
         //colors[i] = ofColor(ofRandom(0,255),ofRandom(0,255),ofRandom(0,255));
         //radius[i] = ofRandom(10, 100);
         
