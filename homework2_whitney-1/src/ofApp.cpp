@@ -3,7 +3,9 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    for (int i = 0; i<10; i++){
+    ofEnableAlphaBlending();
+    
+    for (int i = 0; i<100; i++){
         
         //myObjs[i].setup(ofRandom(0, 800), ofRandom(0, 600));
         myObjs[i].setup();
@@ -35,26 +37,23 @@ void ofApp::draw(){
     
     ofBackground(0);
     
-    for (int i=0; i<10; i++){
+    for (int i=0; i<100; i++){
         
         if (i %2 ==0){ //even number
             ofSetCircleResolution(4);
         }
-        else if{//odd number
+        else if(i % 5 == 0){
             ofSetCircleResolution(3);
         }
         else {
             ofSetCircleResolution(100);
         }
-        //else (i %5 ==0){
-            //ofSetCircleResolution(3);
-        //}
-        
         myObjs[i].draw();
     }
     
+    
     //for (int i=0; i<10; i++){
-      //  myObjs[i].draw();
+        //myObjs[i].draw();
     //};
 }
 

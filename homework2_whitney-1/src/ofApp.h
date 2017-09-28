@@ -24,8 +24,7 @@ public:
         //y = yIn;
         startTime = ofGetElapsedTimef();
         duration = 1.5;
-        colors = ofColor(ofRandom(0,255),ofRandom(0,255),ofRandom(0,255));
-        
+        colors = ofColor(ofRandom(0,255),ofRandom(0,255),ofRandom(0,255),220);
     }
     
     void draw(){
@@ -43,8 +42,8 @@ public:
         
         float colorful = ofMap(sin(time), -1, 1, 0, 255);
         
-            //ofSetColor( ofClamp(colors.r+colorful*0.02,70,180), ofClamp(colors.g+colorful*0.1,50,200), ofClamp(colors.b+colorful*1,30,220));
-            ofSetColor(colors);
+            ofSetColor( ofClamp(colors.r+colorful*0.02,70,180), ofClamp(colors.g+colorful*0.1,50,200), ofClamp(colors.b+colorful*1,30,220),200);
+            //ofSetColor(colors);
         
             ofDrawCircle(position.x, position.y, radius);
      
@@ -70,6 +69,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    transformObj myObjs[10];   
-		
+    transformObj myObjs[100];
 };
